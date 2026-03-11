@@ -1,0 +1,182 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[10:26:41.275825] Configured Lic search path (21.01-s002): 5280@14.139.1.126
+
+Version: 21.14-s082_1, built Thu Jun 23 02:02:08 PDT 2022
+Options: -files synth.tcl 
+Date:    Thu Mar 12 10:26:41 2026
+Host:    edalab-09.srmist.edu.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (12cores*20cpus*1physical cpu*12th Gen Intel(R) Core(TM) i7-12700 25600KB) (15869316KB)
+PID:     12725
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+
+[10:26:42.337361] Periodic Lic check successful
+[10:26:42.337361] Feature usage summary:
+[10:26:42.337361] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (4 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source synth.tcl
+#@ Begin verbose source ./synth.tcl
+@file(synth.tcl) 12: set PROJECT_DIR /home/install/IC618/RA2311067010024/systolic_project
+@file(synth.tcl) 14: set RTL_DIR      $PROJECT_DIR/rtl
+@file(synth.tcl) 15: set SCRIPT_DIR   $PROJECT_DIR/scripts
+@file(synth.tcl) 16: set REPORT_DIR   $PROJECT_DIR/reports
+@file(synth.tcl) 17: set NETLIST_DIR  $PROJECT_DIR/netlist
+@file(synth.tcl) 18: set LIB_DIR      $PROJECT_DIR/lib
+@file(synth.tcl) 20: file mkdir $REPORT_DIR
+@file(synth.tcl) 21: file mkdir $NETLIST_DIR
+@file(synth.tcl) 27: set TOP_MODULE systolic_array_4x4
+@file(synth.tcl) 40: set LIB_PATH /home/install/IC618/RA2311067010024/FOUNDRY/digital/45nm/NangateOpenCellLibrary_v1.00_20080225/liberty/FreePDK45_lib_v1.0_typical.lib
+@file(synth.tcl) 42: read_libs $LIB_PATH
+
+Threads Configured:3
+
+  Message Summary for Library FreePDK45_lib_v1.0_typical.lib:
+  ***********************************************************
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  ***********************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.800000, 25.000000) in library 'FreePDK45_lib_v1.0_typical.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA_X1' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA_X1' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X1' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X1' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X16' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X16' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X32' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X32' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILLCELL_X8' must have an output pin.
+@file(synth.tcl) 48: read_hdl $RTL_DIR/pe_ws.v
+@file(synth.tcl) 49: read_hdl $RTL_DIR/localized_controller.v
+@file(synth.tcl) 50: read_hdl $RTL_DIR/systolic_array_4x4.v
+@file(synth.tcl) 54: elaborate $TOP_MODULE
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'systolic_array_4x4' from file '/home/install/IC618/RA2311067010024/systolic_project/rtl/systolic_array_4x4.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'systolic_array_4x4' with default parameters value.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'systolic_array_4x4'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+--------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |         0.00 | 
+--------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: systolic_array_4x4, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: systolic_array_4x4, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+---------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (ms) | 
+---------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |         0.00 | 
+| hlo_clip           |       0 |       0 |         0.00 | 
+---------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(synth.tcl) 60: check_design > $REPORT_DIR/check_design.rpt
+
+
+ No LEF file read in.
+@file(synth.tcl) 66: create_clock -name clk -period 10 [get_ports clk]
+@file(synth.tcl) 68: set_input_delay  2 -clock clk [all_inputs]
+Warning : Unsupported SDC command option. [SDC-201] [set_input_delay]
+        : The set_input_delay command is not supported on ports which have a clock already defined 'port:systolic_array_4x4/clk'.
+        : The current version does not support this SDC command option.  However, future versions may be enhanced to support this option.
+@file(synth.tcl) 69: set_output_delay 2 -clock clk [all_outputs]
+@file(synth.tcl) 75: set_operating_conditions -library typical
+@file(synth.tcl) 82: set_db syn_global_effort high
+  Setting attribute of root '/': 'syn_global_effort' = high
+@file(synth.tcl) 83: set_db syn_map_effort high
+  Setting attribute of root '/': 'syn_map_effort' = high
+@file(synth.tcl) 84: set_db syn_opt_effort high
+  Setting attribute of root '/': 'syn_opt_effort' = high
+@file(synth.tcl) 91: set_db lp_insert_clock_gating true
+Warning : The 'lp_insert_clock_gating' attribute should be set before elaboration. [POPT-104]
+        : The design 'design:systolic_array_4x4' is already read. The attribute will not be set.
+        : Setting the 'lp_insert_clock_gating' attribute before elaboration will result in an optimal clock-gated design.
+  Setting attribute of root '/': 'lp_insert_clock_gating' = true
+@file(synth.tcl) 94: read_vcd -vcd_module tb_systolic_array/dut $NETLIST_DIR/../waves/systolic.vcd
+Warning : None of '-static' or '-activity_profile' options given. [VCD-4]
+        : Static analysis will be done on the VCD file '/home/install/IC618/RA2311067010024/systolic_project/netlist/../waves/systolic.vcd'.
+        : The '-static' option has been selected by default. To specify explicitly, use at least one of '-static' or '-activity_profile' options.
+Info    : Joules engine is used. [RPT-16]
+        : Joules parser is being used for the command read_vcd.
+@file(synth.tcl) 96: syn_generic
+Error   : Cannot find any usable integrated clock-gating cell. [POPT-78] [syn_generic]
+        : The provided library does not have a usable integrated clock-gating cell.
+        : If the library has an integrated clock-gating cell, but this cell has either a 'dont_use' or a 'dont_touch' attribute set to 'true', the cell is considered unusable. To make the cell usable, set the 'avoid' attribute for the lib_cell to 'false' in Genus. If the library has no integrated clock-gating cell, you can set the 'lp_insert_discrete_clock_gating_logic' root attribute to 'true' to allow Genus to create discrete clock-gating logic for the insertion.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+#@ End verbose source ./synth.tcl
+1
+Encountered problems processing file: synth.tcl
+WARNING: This version of the tool is 1357 days old.
+@genus:root: 2> source synth.tcl
+Sourcing './synth.tcl' (Thu Mar 12 10:29:06 IST 2026)...
+#@ Begin verbose source ./synth.tcl
+@file(synth.tcl) 8: set PROJECT_DIR /home/install/IC618/RA2311067010024/systolic_project
+@file(synth.tcl) 9: set RTL_DIR      $PROJECT_DIR/rtl
+@file(synth.tcl) 10: set SCRIPT_DIR   $PROJECT_DIR/scripts
+@file(synth.tcl) 11: set REPORT_DIR   $PROJECT_DIR/reports
+@file(synth.tcl) 12: set NETLIST_DIR  $PROJECT_DIR/netlist
+@file(synth.tcl) 13: set LIB_DIR      $PROJECT_DIR/lib
+@file(synth.tcl) 15: file mkdir $REPORT_DIR
+@file(synth.tcl) 16: file mkdir $NETLIST_DIR
+@file(synth.tcl) 18: set TOP_MODULE systolic_array_4x4
+@file(synth.tcl) 19: set LIB_PATH /home/install/IC618/RA2311067010024/FOUNDRY/digital/45nm/NangateOpenCellLibrary_v1.00_20080225/liberty/FreePDK45_lib_v1.0_typical.lib
+@file(synth.tcl) 21: read_libs $LIB_PATH
+#@ End verbose source ./synth.tcl
+Cannot use read_libs after read_mmmc
+@genus:root: 3> exit
+
+Lic Summary:
+[10:29:14.489754] Cdslmd servers: cadence-c2s
+[10:29:14.489760] Feature usage summary:
+[10:29:14.489760] Genus_Synthesis
+
+Normal exit.
